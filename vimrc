@@ -61,7 +61,7 @@ set ai
 " Smart indent
 set si 
 " Wrap lines
-set nowrap 
+set wrap 
 " Underscore denote words
 set iskeyword-=_
 
@@ -115,10 +115,10 @@ if exists("+relativenumber")
     endif
 " Limit line-length to 80 columns by highlighting col 81 onward
 if exists("+colorcolumn")
-  set colorcolumn=81
+  set colorcolumn=84
 endif
 " Force cursor onto a new line after 80 characters
-set textwidth=80
+set textwidth=83
 " Highlight current line
 set cursorline
 
@@ -166,6 +166,8 @@ inoremap jk <esc>
 " So I can use mouse
 set mouse=a
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Clear search with ,<space>
 nnoremap <leader><space> :noh<cr>
