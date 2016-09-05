@@ -14,7 +14,7 @@ filetype indent plugin on
 syntax enable
 " Dark Solarized scheme
 set background=dark
-let g:solarized_visibility= 'low'
+let g:solarized_visibility= 'normal'
 colorscheme solarized
 
 " Set the dimmed colour for Limelight
@@ -102,10 +102,10 @@ set title
 " Show invisibles
 set list
 nmap <leader>l :set list!
-set listchars=tab:>-,eol:¬
-" Invisible character colors 
+set listchars=tab:!·,trail:·
+" Invisible character colors
 highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59i
+highlight SpecialKey guifg=#4a4a59
 " Set relative line numbers if we can...
 if exists("+relativenumber")
     " Due to a problem with relative line numbers not persisting across new
