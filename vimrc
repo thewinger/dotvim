@@ -101,7 +101,7 @@ set ruler
 set title
 " Show invisibles
 set list
-nmap <leader>l :set list!
+nmap <leader>l :set list!<CR>
 set listchars=tab:!·,trail:·
 " Invisible character colors
 highlight NonText guifg=#4a4a59
