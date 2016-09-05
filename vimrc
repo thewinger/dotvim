@@ -20,6 +20,7 @@ colorscheme solarized
 
 syntax on "Turn on syntax highlighting
 
+
 "Tabs, indentation and lines
 
 "4 spaces please
