@@ -13,14 +13,8 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax enable
 " Dark Solarized scheme
-" 256 colours please
-set t_Co=256
-let g:solarized_termtrans = 1
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+set background=dark
+let g:solarized_visibility= 'low'
 colorscheme solarized
 
 " Set the dimmed colour for Limelight
@@ -33,6 +27,8 @@ let g:limelight_conceal_ctermfg = 'LightGrey'
 autocmd vimenter * NERDTree
 " ... but focus on the file itself, rather than NERDTree
 autocmd vimenter * wincmd p
+" map open/close NERDTree to ctrl+n
+map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
