@@ -23,10 +23,6 @@ let g:limelight_conceal_ctermfg = 'LightGrey'
 
 " NERDTree
 
-" Run NERDTree as soon as we launch Vim...
-autocmd vimenter * NERDTree
-" ... but focus on the file itself, rather than NERDTree
-autocmd vimenter * wincmd p
 " map open/close NERDTree to ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left open
