@@ -15,6 +15,7 @@ syntax enable
 " Dark Solarized scheme
 " 256 colours please
 set t_Co=256
+let g:solarized_termtrans = 1
 if has('gui_running')
     set background=light
 else
@@ -104,7 +105,11 @@ set ruler
 set title
 " Show invisibles
 set list
-set listchars=tab:>-,trail:¬∑
+nmap <leader>l :set list!
+set listchars=tab:>-,eol:¬
+" Invisible character colors 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59i
 " Set relative line numbers if we can...
 if exists("+relativenumber")
     " Due to a problem with relative line numbers not persisting across new
