@@ -30,7 +30,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " Set relevant filetypes
-au BufRead,BufNewFile *.scss set filetype=scss.css
 au BufRead,BufNewFile *.md set filetype=markdown
 
 
@@ -40,11 +39,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 set splitbelow
 set splitright
 
-" Tabs, indentation and lines
+" Text management 
 
-"4 spaces please
+" 2 spaces please
 set expandtab
-set smarttab
+"set smarttab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
@@ -62,8 +61,6 @@ set ai
 set si
 " Wrap lines
 set nowrap
-" Underscore denote words
-set iskeyword-=_
 
 
 " Interactions
@@ -76,6 +73,7 @@ set sidescroll=1
 " Allow motions and back-spacing over line-endings etc
 set backspace=indent,eol,start
 set whichwrap=h,l,b,<,>,~,[,]
+"
 "Yanking to system clipboard
 set clipboard=unnamed
 
@@ -99,9 +97,7 @@ set title
 set list
 nmap <leader>l :set list!<CR>
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
+set list listchars=tab:»·,trail:·
 " Set relative line numbers if we can...
 if exists("+relativenumber")
     " Due to a problem with relative line numbers not persisting across new
@@ -112,14 +108,12 @@ if exists("+relativenumber")
     " ...otherwise let‚Äôs just have regular ones
     else
         set number
-        set numberwidth=5
     endif
 " Limit line-length to 80 columns by highlighting col 81 onward
 if exists("+colorcolumn")
-  set colorcolumn=+1
+  set colorcolumn=81
 endif
 " Force cursor onto a new line after 80 characters
-set formatoptions=
 set textwidth=80
 " Highlight current line
 set cursorline
