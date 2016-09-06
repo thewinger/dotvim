@@ -143,8 +143,10 @@ set smartcase
 let g:mustache_abbreviations = 1
 
 
-"t <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'Key mappings
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Key mappings
 
 " Learn to use hjkl (hardcore)
 map  <up>    <nop>
