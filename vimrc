@@ -98,8 +98,8 @@ set title
 " Show invisibles
 set list
 nmap <leader>l :set list!<CR>
-set listchars=tab:!·,trail:·
-" Invisible character colors
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 " Set relative line numbers if we can...
@@ -112,16 +112,21 @@ if exists("+relativenumber")
     " ...otherwise let‚Äôs just have regular ones
     else
         set number
+        set numberwidth=5
     endif
 " Limit line-length to 80 columns by highlighting col 81 onward
 if exists("+colorcolumn")
-  set colorcolumn=84
+  set colorcolumn=+1
 endif
 " Force cursor onto a new line after 80 characters
-set textwidth=83
+set textwidth=80
 " Highlight current line
 set cursorline
 
+augroup vimrc_autocmds
+    autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+    autocmd BufEnter * match OverLength /\%80v.*/
+augroup END
 
 " Search
 
@@ -138,7 +143,8 @@ set smartcase
 let g:mustache_abbreviations = 1
 
 
-" Key mappings
+"t <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'Key mappings
 
 " Learn to use hjkl (hardcore)
 map  <up>    <nop>
