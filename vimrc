@@ -30,7 +30,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " Set relevant filetypes
+au BufRead,BufNewFile *.scc set filetype=scss.css
 au BufRead,BufNewFile *.md set filetype=markdown
+
 
 " Buffer management
 
