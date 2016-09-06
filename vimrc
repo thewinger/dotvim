@@ -30,9 +30,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " Set relevant filetypes
-au BufRead,BufNewFile *.scss set filetype=css
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.less set filetype=less
 
 " Buffer management
 
@@ -218,3 +216,20 @@ nnoremap <Leader>h :sp <C-R>=expand('%:p:h') . '/'<CR>
 "To be able to copy text from vi to clipboard
 map <C-v> :r !pbpaste<CR>
 map <C-c> y:e ~/clipsongzboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
+" Abbreviations and auto-completions
+
+" lipsum<Tab> drops some Lorem ipsum text into the document
+iabbrev lipsum Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+" Set up a section-level comment
+iabbrev comsec 
+\<CR>/* ==========================================================================
+\<CR>#
+\<CR>========================================================================== */
+" Set up a sub-level comment
+iabbrev comsub 
+\<CR>/*
+\<Cr>========================================================================== */
+" Running the `@c` macro will always insert a section-level comment
+let @c = 'O^Mcomsec><80>kbjk2?*^M^Vkr A'
+" Running the `@x` macro will always insert a sub-level comment
+let @x = 'O^Mcomsub><80>kbjk^[^r kA '
