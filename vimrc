@@ -45,23 +45,23 @@ set splitright
 "4 spaces please
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 " Tab completion as bash
 set wildmode=longest,list,full
 set wildmenu
 " Round indent to nearest multiple of 4
 set shiftround
 " Line break on 500 characters
-set lbr
-set tw=500
+"set lbr
+"set tw=500
 " Auto indent
-set ai 
+set ai
 " Smart indent
-set si 
+set si
 " Wrap lines
-set wrap 
+set nowrap
 " Underscore denote words
 set iskeyword-=_
 
@@ -119,6 +119,7 @@ if exists("+colorcolumn")
   set colorcolumn=+1
 endif
 " Force cursor onto a new line after 80 characters
+set formatoptions=
 set textwidth=80
 " Highlight current line
 set cursorline
