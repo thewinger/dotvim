@@ -30,6 +30,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " Set relevant filetypes
+au BufRead,BufNewFile *.scss set filetype=scss.css
 au BufRead,BufNewFile *.md set filetype=markdown
 
 
@@ -39,7 +40,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 set splitbelow
 set splitright
 
-" Text management 
+" Text management
 
 " 2 spaces please
 set expandtab
@@ -53,8 +54,8 @@ set wildmenu
 " Round indent to nearest multiple of 4
 set shiftround
 " Line break on 500 characters
-"set lbr
-"set tw=500
+set lbr
+set tw=500
 " Auto indent
 set ai
 " Smart indent
@@ -117,11 +118,6 @@ endif
 set textwidth=80
 " Highlight current line
 set cursorline
-
-augroup vimrc_autocmds
-    autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-    autocmd BufEnter * match OverLength /\%80v.*/
-augroup END
 
 " Search
 
