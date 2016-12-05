@@ -55,14 +55,20 @@ set wildmenu
 set shiftround
 " Line break on 500 characters
 set lbr
-set tw=500
 " Auto indent
 set ai
 " Smart indent
 set si
 " Wrap lines
-set nowrap
-
+set wrap
+" Dont Show invisibles
+set nolist
+" Display extra whitespace
+" set list listchars=tab:»·,trail:·
+" Allow motions and back-spacing over line-endings etc
+set backspace=indent,eol,start
+set whichwrap=h,l,b,<,>,~,[,]
+set formatoptions-=t
 
 " Interactions
 
@@ -71,10 +77,6 @@ set scrolloff=5
 set sidescrolloff=5
 " Scroll sideways a character at a time, rather than a screen at a time
 set sidescroll=1
-" Allow motions and back-spacing over line-endings etc
-set backspace=indent,eol,start
-set whichwrap=h,l,b,<,>,~,[,]
-"
 "Yanking to system clipboard
 set clipboard=unnamed
 
@@ -94,11 +96,6 @@ set modeline
 set ruler
 " Show file title in terminal tab
 set title
-" Show invisibles
-set list
-nmap <leader>l :set list!<CR>
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
 " Set relative line numbers if we can...
 if exists("+relativenumber")
     " Due to a problem with relative line numbers not persisting across new
@@ -110,12 +107,12 @@ if exists("+relativenumber")
     else
         set number
     endif
-" Limit line-length to 80 columns by highlighting col 81 onward
-if exists("+colorcolumn")
-  set colorcolumn=81
-endif
-" Force cursor onto a new line after 80 characters
-set textwidth=80
+"" Limit line-length to 80 columns by highlighting col 81 onward
+"if exists("+colorcolumn")
+  "set colorcolumn=81
+"endif
+"" Force cursor onto a new line after 80 characters
+"set textwidth=80
 " Highlight current line
 set cursorline
 
