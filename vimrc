@@ -12,10 +12,11 @@ set encoding=utf-8
 filetype indent plugin on
 " Enable syntax highlighting
 syntax enable
-" Dark Solarized scheme
+"" Dark Solarized scheme
 set background=dark
 let g:solarized_visibility= 'normal'
 colorscheme solarized
+
 
 " Set the dimmed colour for Limelight
 let g:limelight_conceal_ctermfg = 'LightGrey'
@@ -116,6 +117,10 @@ if exists("+relativenumber")
 " Highlight current line
 set cursorline
 
+" No backup or swp file
+set nobackup
+set noswapfile
+
 " Search
 
 " Don't keep results highlighted after searching...
@@ -157,6 +162,10 @@ map vv ^vg_
 inoremap jj <esc>
 " jk to throw you into normal mode from insert mode
 inoremap jk <esc>
+" kj  to throw you into normal mode from insert mode
+inoremap kj <esc>
+" ;;  to throw you into normal mode from insert mode
+inoremap ;; ;<esc>
 " So I can use mouse
 set mouse=a
 
